@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="一、索引在MySQL中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准：不同存储引擎的索引的工作方式并不一样，也不是所有的存储引擎都支持所有类型的索引。 索引优点总结下来索引有如下三个优点：  索引减少了服务器需要扫描的数据量。 索引可以帮助服务器避免排序和临时表（B+Tree 索引是有序的，可以用于 ORDER BY 和 GROUP BY 操作。临时表主要是在排序和分组过程中">
+<meta name="description" content="索引在MySQL中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准：不同存储引擎的索引的工作方式并不一样，也不是所有的存储引擎都支持所有类型的索引。 索引优点总结下来索引有如下三个优点：  索引减少了服务器需要扫描的数据量。 索引可以帮助服务器避免排序和临时表（B+Tree 索引是有序的，可以用于 ORDER BY 和 GROUP BY 操作。临时表主要是在排序和分组过程中创建">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL">
 <meta property="og:url" content="http://yoursite.com/2019/07/30/MySQL/index.html">
 <meta property="og:site_name" content="Queeee&#39;s blog">
-<meta property="og:description" content="一、索引在MySQL中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准：不同存储引擎的索引的工作方式并不一样，也不是所有的存储引擎都支持所有类型的索引。 索引优点总结下来索引有如下三个优点：  索引减少了服务器需要扫描的数据量。 索引可以帮助服务器避免排序和临时表（B+Tree 索引是有序的，可以用于 ORDER BY 和 GROUP BY 操作。临时表主要是在排序和分组过程中">
+<meta property="og:description" content="索引在MySQL中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准：不同存储引擎的索引的工作方式并不一样，也不是所有的存储引擎都支持所有类型的索引。 索引优点总结下来索引有如下三个优点：  索引减少了服务器需要扫描的数据量。 索引可以帮助服务器避免排序和临时表（B+Tree 索引是有序的，可以用于 ORDER BY 和 GROUP BY 操作。临时表主要是在排序和分组过程中创建">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-31T07:16:28.058Z">
+<meta property="og:updated_time" content="2019-07-31T07:24:55.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL">
-<meta name="twitter:description" content="一、索引在MySQL中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准：不同存储引擎的索引的工作方式并不一样，也不是所有的存储引擎都支持所有类型的索引。 索引优点总结下来索引有如下三个优点：  索引减少了服务器需要扫描的数据量。 索引可以帮助服务器避免排序和临时表（B+Tree 索引是有序的，可以用于 ORDER BY 和 GROUP BY 操作。临时表主要是在排序和分组过程中">
+<meta name="twitter:description" content="索引在MySQL中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准：不同存储引擎的索引的工作方式并不一样，也不是所有的存储引擎都支持所有类型的索引。 索引优点总结下来索引有如下三个优点：  索引减少了服务器需要扫描的数据量。 索引可以帮助服务器避免排序和临时表（B+Tree 索引是有序的，可以用于 ORDER BY 和 GROUP BY 操作。临时表主要是在排序和分组过程中创建">
 
 
 
@@ -336,14 +336,14 @@
       
 
       
-        <h1 id="一、索引"><a href="#一、索引" class="headerlink" title="一、索引"></a>一、索引</h1><p>在MySQL中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准：不同存储引擎的索引的工作方式并不一样，也不是所有的存储引擎都支持所有类型的索引。</p>
+        <h1 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h1><p>在MySQL中，索引是在存储引擎层而不是服务器层实现的。所以，并没有统一的索引标准：不同存储引擎的索引的工作方式并不一样，也不是所有的存储引擎都支持所有类型的索引。</p>
 <h2 id="索引优点"><a href="#索引优点" class="headerlink" title="索引优点"></a>索引优点</h2><p>总结下来索引有如下三个优点：</p>
 <ul>
 <li>索引减少了服务器需要扫描的数据量。</li>
 <li>索引可以帮助服务器避免排序和临时表（B+Tree 索引是有序的，可以用于 ORDER BY 和 GROUP BY 操作。临时表主要是在排序和分组过程中创建，因为不需要排序和分组，也就不需要创建临时表）。</li>
 <li>索引可以将随机I/O变为顺序I/O。</li>
 </ul>
-<h2 id="MySQL索引"><a href="#MySQL索引" class="headerlink" title="MySQL索引"></a>MySQL索引</h2><h3 id="1-B-Tree索引"><a href="#1-B-Tree索引" class="headerlink" title="1.B-Tree索引"></a>1.B-Tree索引</h3><p>是大多数 MySQL 存储引擎的默认索引类型。</p>
+<h2 id="MySQL索引"><a href="#MySQL索引" class="headerlink" title="MySQL索引"></a>MySQL索引</h2><h3 id="B-Tree索引"><a href="#B-Tree索引" class="headerlink" title="B-Tree索引"></a>B-Tree索引</h3><p>是大多数 MySQL 存储引擎的默认索引类型。</p>
 <p>因为不再需要进行全表扫描，只需要对树进行搜索即可，所以查找速度快很多。</p>
 <p>存储引擎以不同的方式使用B-Tree索引，性能也各有不同，各有优劣。例如，MyISAM使用前缀压缩技术使得索引更小，但InnoDB则按照原数据格式进行存储。再如MyISAM索引通过物理位置引用被索引的行，而InnoDB则根据主键引用被索引的行。</p>
 <p>B-Tree索引适用于全键值、键值范围或键前缀查找。其中键前缀查找只适用于根据最左前缀的查找。</p>
@@ -353,7 +353,7 @@
 <li>不能跳过索引中的列。</li>
 <li>如果查询中有某个列的范围查询，则其右边的所有列都无法使用索引优化查找。</li>
 </ul>
-<h3 id="2-哈希索引"><a href="#2-哈希索引" class="headerlink" title="2.哈希索引"></a>2.哈希索引</h3><p>哈希索引（hash index）基于哈希表实现，只要精确匹配索引所有列的查询才有效。</p>
+<h3 id="哈希索引"><a href="#哈希索引" class="headerlink" title="哈希索引"></a>哈希索引</h3><p>哈希索引（hash index）基于哈希表实现，只要精确匹配索引所有列的查询才有效。</p>
 <p>在MySQL中，只有Memory引擎显式支持哈希索引。这也是Memory引擎表默认的索引类型</p>
 <p>因为索引自身只需要存储对应的哈希值，所以索引的结构十分紧凑，这也让哈希索引查找的速度非常快。然而，哈希索引也有它的限制：</p>
 <ul>
@@ -364,16 +364,16 @@
 <li>如果哈希冲突很多的话，一些索引维护操作的代码也会很高。</li>
 </ul>
 <p>InnoDB引擎有一个特殊的功能叫做“自适应哈希索引”。当InnoDB注意到某些索引值被使用得非常频繁时，它会在内存中基于B-Tree索引之上再创建一个哈希索引，这样就让B-Tree索引也具有哈希索引的一些优点，比如快速的哈希查找。这是一个完全自动的、内部的行为，用户无法控制或者配置，不过如果有必要，完全可以关闭该功能。     </p>
-<h3 id="3-空间数据索引（R-Tree）"><a href="#3-空间数据索引（R-Tree）" class="headerlink" title="3.空间数据索引（R-Tree）"></a>3.空间数据索引（R-Tree）</h3><p>MyISAM表支持空间索引，可以用作地理数据存储。查询时，可以有效地使用任意维度来组合查询。必须使用GIS相关函数如MBRCONTAINS（）等来维护数据。</p>
-<h3 id="4-全文索引"><a href="#4-全文索引" class="headerlink" title="4.全文索引"></a>4.全文索引</h3><p>MyISAM 存储引擎支持全文索引，用于查找文本中的关键词，而不是直接比较是否相等。</p>
+<h3 id="空间数据索引（R-Tree）"><a href="#空间数据索引（R-Tree）" class="headerlink" title="空间数据索引（R-Tree）"></a>空间数据索引（R-Tree）</h3><p>MyISAM表支持空间索引，可以用作地理数据存储。查询时，可以有效地使用任意维度来组合查询。必须使用GIS相关函数如MBRCONTAINS（）等来维护数据。</p>
+<h3 id="全文索引"><a href="#全文索引" class="headerlink" title="全文索引"></a>全文索引</h3><p>MyISAM 存储引擎支持全文索引，用于查找文本中的关键词，而不是直接比较是否相等。</p>
 <p>查找条件使用 MATCH AGAINST，而不是普通的 WHERE。</p>
 <p>全文索引使用倒排索引实现，它记录着关键词到其所在文档的映射。</p>
 <p>InnoDB 存储引擎在 MySQL 5.6.4 版本中也开始支持全文索引。</p>
-<h2 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h2><h3 id="1-独立的列"><a href="#1-独立的列" class="headerlink" title="1.独立的列"></a>1.独立的列</h3><p>“独立的列”是指索引不能是表达式的一部分，也不能是函数的参数。</p>
+<h2 id="索引优化"><a href="#索引优化" class="headerlink" title="索引优化"></a>索引优化</h2><h3 id="独立的列"><a href="#独立的列" class="headerlink" title="独立的列"></a>独立的列</h3><p>“独立的列”是指索引不能是表达式的一部分，也不能是函数的参数。</p>
 <p>例如，下面是常见的错误：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT actor_id FROM actor WHERE actor_id + 1 = 5;</span><br><span class="line">SELECT ... WHERE TO_DAYS(CURRENT_DATE) - TO_DAYS(date_col) &lt;= 10</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-前缀索引和索引选择性"><a href="#2-前缀索引和索引选择性" class="headerlink" title="2. 前缀索引和索引选择性"></a>2. 前缀索引和索引选择性</h3><p>有时候需要索引很长的字符列，这会让索引变得大且慢。通常可以索引开始的部分字符，这样可以大大节约索引空间，从而提高索引效率。</p>
+<h3 id="前缀索引和索引选择性"><a href="#前缀索引和索引选择性" class="headerlink" title="前缀索引和索引选择性"></a>前缀索引和索引选择性</h3><p>有时候需要索引很长的字符列，这会让索引变得大且慢。通常可以索引开始的部分字符，这样可以大大节约索引空间，从而提高索引效率。</p>
 <p>要选择足够长的前缀保证较高的选择性，同时又不能太长（以便节约空间）。前缀应该足够长，以使得前缀索引的选择性接近于索引的整个列。</p>
 <p>计算合适的前缀长度的一个办法就是计算完整列的选择性，并使用前缀的选择性接近于完整列的选择性。下面显示如何计算完整列的选择性：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT COUNT(DISTINCT city)/COUNT(*) FROM sakila.city_demo</span><br></pre></td></tr></table></figure>
@@ -382,15 +382,15 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER TABLE sakila.city_demo ADD KEY(city(7))</span><br></pre></td></tr></table></figure>
 
 <p>前缀索引时一种能使索引更小、更快的有效办法，但另一方面也有其缺点：MySQL无法使用前缀索引做ORDER BY和GROUP BY，也无法使用前缀索引做覆盖扫描。</p>
-<h3 id="3-多列索引"><a href="#3-多列索引" class="headerlink" title="3.多列索引"></a>3.多列索引</h3><p>在需要使用多个列作为条件进行查询时，使用多列索引比使用多个单列索引性能更好。例如下面的语句中，最好把 actor_id 和 film_id 设置为多列索引。</p>
+<h3 id="多列索引"><a href="#多列索引" class="headerlink" title="多列索引"></a>多列索引</h3><p>在需要使用多个列作为条件进行查询时，使用多列索引比使用多个单列索引性能更好。例如下面的语句中，最好把 actor_id 和 film_id 设置为多列索引。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> film_id, actor_ <span class="keyword">id</span> <span class="keyword">FROM</span> sakila.film_actor</span><br><span class="line"><span class="keyword">WHERE</span> actor_id = <span class="number">1</span> <span class="keyword">AND</span> film_id = <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 
-<h3 id="4-选择合适的索引列的顺序"><a href="#4-选择合适的索引列的顺序" class="headerlink" title="4.选择合适的索引列的顺序"></a>4.选择合适的索引列的顺序</h3><p>当不需要考虑排序和分组时，将选择性最高的列放在索引的最前列。</p>
+<h3 id="选择合适的索引列的顺序"><a href="#选择合适的索引列的顺序" class="headerlink" title="选择合适的索引列的顺序"></a>选择合适的索引列的顺序</h3><p>当不需要考虑排序和分组时，将选择性最高的列放在索引的最前列。</p>
 <p>索引的选择性是指：不重复的索引值和记录总数的比值。最大值为 1，此时每个记录都有唯一的索引与其对应。选择性越高，查询效率也越高。</p>
 <p>例如下面显示的结果中 customer_id 的选择性比 staff_id 更高，因此最好把 customer_id 列放在多列索引的前面。</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> staff_id)/<span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> staff_id_selectivity,</span><br><span class="line"><span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> customer_id)/<span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> customer_id_selectivity,</span><br><span class="line"><span class="keyword">COUNT</span>(*)</span><br><span class="line"><span class="keyword">FROM</span> payment;Click to copy</span><br><span class="line">   staff_id_selectivity: 0.0001</span><br><span class="line">customer_id_selectivity: 0.0373</span><br><span class="line">               COUNT(*): 16049</span><br></pre></td></tr></table></figure>
 
-<h3 id="5-聚簇索引"><a href="#5-聚簇索引" class="headerlink" title="5.聚簇索引"></a>5.聚簇索引</h3><p>聚簇索引并不是一种单独的索引类型，而是一种数据存储方式。具体的细节依赖于其实现方式，但InnoDB的聚簇索引实际上在同一个结构中保存了B-Tree索引和数据行。</p>
+<h3 id="聚簇索引"><a href="#聚簇索引" class="headerlink" title="聚簇索引"></a>聚簇索引</h3><p>聚簇索引并不是一种单独的索引类型，而是一种数据存储方式。具体的细节依赖于其实现方式，但InnoDB的聚簇索引实际上在同一个结构中保存了B-Tree索引和数据行。</p>
 <p>当表有聚簇索引时，它的数据行实际上存在索引的叶子页中。</p>
 <p>如果没有定义主键，InnoDB会选择一个唯一的非空索引替代。如果没有这样的索引，InnoDB会隐式定义一个主键来作为聚簇索引。聚簇索引的每一个叶子节点都包含了主键值、事务ID、用于事务和MVCC的回滚指针以及所有的剩余列。还有一点和IMyISAM不同的是，InnoDB的二级索引和聚簇索引很不相同。InnoDB二级索引的叶子节点中存储的不是“行指针”，而是主键值，并以此作为指向行的“指针”。这样的策略减少了当出现行移动或者数据页分裂时二级索引的维护工作。</p>
 <p>事实上，MyISAM中主键索引和其他索引在结构上没有什么不同。主键索引就是一个名为PRIMARY的唯一非空索引。</p>
@@ -402,7 +402,7 @@
 <li>由于频繁的页分裂，页会变得稀疏并被不规则地填充，所以最终会有数据碎片。</li>
 </ul>
 <p>在把这些随机值载入聚簇索引以后，允许需要做一次OPTIMIZE TABLE来重建表并优化页的填充。</p>
-<h3 id="6-覆盖索引"><a href="#6-覆盖索引" class="headerlink" title="6.覆盖索引"></a>6.覆盖索引</h3><p>如果一个索引包含（或者说覆盖）所有需要查询的字段的值，我们就称之为“覆盖索引”。</p>
+<h3 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h3><p>如果一个索引包含（或者说覆盖）所有需要查询的字段的值，我们就称之为“覆盖索引”。</p>
 <p>具有以下优点：</p>
 <ul>
 <li>索引条目通常远小于数据行的大小，所以如果只需要读取索引，那MySQL就会极大地减少数据访问量。</li>
@@ -415,7 +415,8 @@
 <li>对于中到大型的表，索引就非常有效；</li>
 <li>但是对于特大型的表，建立和维护索引的代价将会随之增长。这种情况下，需要用到一种技术可以直接区分出需要查询的一组数据，而不是一条记录一条记录地匹配，例如可以使用分区技术。</li>
 </ul>
-<h1 id="二、日志"><a href="#二、日志" class="headerlink" title="二、日志"></a>二、日志</h1><h2 id="重做日志（redo-log）"><a href="#重做日志（redo-log）" class="headerlink" title="重做日志（redo log）"></a>重做日志（redo log）</h2><p>作用：<br>　　确保事务的持久性。<br>　　防止在发生故障的时间点，尚有脏页未写入磁盘，在重启mysql服务的时候，根据redo log进行重做，从而达到事务的持久性这一特性。</p>
+<h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><h2 id="重做日志（redo-log）"><a href="#重做日志（redo-log）" class="headerlink" title="重做日志（redo log）"></a>重做日志（redo log）</h2><p>作用：<br>　　确保事务的持久性。<br>　　防止在发生故障的时间点，尚有脏页未写入磁盘，在重启mysql服务的时候，根据redo log进行重做，从而达到事务的持久性这一特性。
+　　</p>
 <h2 id="Undo-日志"><a href="#Undo-日志" class="headerlink" title="Undo 日志"></a>Undo 日志</h2><p>MVCC 使用到的快照存储在 Undo 日志中，该日志通过回滚指针把一个数据行（Record）的所有快照连接起来。</p>
 
       
@@ -584,7 +585,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、索引"><span class="nav-number">1.</span> <span class="nav-text">一、索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#索引优点"><span class="nav-number">1.1.</span> <span class="nav-text">索引优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL索引"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-B-Tree索引"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.B-Tree索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-哈希索引"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.哈希索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-空间数据索引（R-Tree）"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.空间数据索引（R-Tree）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-全文索引"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.全文索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引优化"><span class="nav-number">1.3.</span> <span class="nav-text">索引优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-独立的列"><span class="nav-number">1.3.1.</span> <span class="nav-text">1.独立的列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-前缀索引和索引选择性"><span class="nav-number">1.3.2.</span> <span class="nav-text">2. 前缀索引和索引选择性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-多列索引"><span class="nav-number">1.3.3.</span> <span class="nav-text">3.多列索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-选择合适的索引列的顺序"><span class="nav-number">1.3.4.</span> <span class="nav-text">4.选择合适的索引列的顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-聚簇索引"><span class="nav-number">1.3.5.</span> <span class="nav-text">5.聚簇索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在InnoDB中按主键顺序插入行"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">在InnoDB中按主键顺序插入行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-覆盖索引"><span class="nav-number">1.3.6.</span> <span class="nav-text">6.覆盖索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引的使用条件"><span class="nav-number">1.4.</span> <span class="nav-text">索引的使用条件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、日志"><span class="nav-number">2.</span> <span class="nav-text">二、日志</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重做日志（redo-log）"><span class="nav-number">2.1.</span> <span class="nav-text">重做日志（redo log）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Undo-日志"><span class="nav-number">2.2.</span> <span class="nav-text">Undo 日志</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#索引"><span class="nav-number">1.</span> <span class="nav-text">索引</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#索引优点"><span class="nav-number">1.1.</span> <span class="nav-text">索引优点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL索引"><span class="nav-number">1.2.</span> <span class="nav-text">MySQL索引</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#B-Tree索引"><span class="nav-number">1.2.1.</span> <span class="nav-text">B-Tree索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#哈希索引"><span class="nav-number">1.2.2.</span> <span class="nav-text">哈希索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#空间数据索引（R-Tree）"><span class="nav-number">1.2.3.</span> <span class="nav-text">空间数据索引（R-Tree）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全文索引"><span class="nav-number">1.2.4.</span> <span class="nav-text">全文索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引优化"><span class="nav-number">1.3.</span> <span class="nav-text">索引优化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#独立的列"><span class="nav-number">1.3.1.</span> <span class="nav-text">独立的列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前缀索引和索引选择性"><span class="nav-number">1.3.2.</span> <span class="nav-text">前缀索引和索引选择性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多列索引"><span class="nav-number">1.3.3.</span> <span class="nav-text">多列索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择合适的索引列的顺序"><span class="nav-number">1.3.4.</span> <span class="nav-text">选择合适的索引列的顺序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#聚簇索引"><span class="nav-number">1.3.5.</span> <span class="nav-text">聚簇索引</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在InnoDB中按主键顺序插入行"><span class="nav-number">1.3.5.1.</span> <span class="nav-text">在InnoDB中按主键顺序插入行</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#覆盖索引"><span class="nav-number">1.3.6.</span> <span class="nav-text">覆盖索引</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引的使用条件"><span class="nav-number">1.4.</span> <span class="nav-text">索引的使用条件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日志"><span class="nav-number">2.</span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#重做日志（redo-log）"><span class="nav-number">2.1.</span> <span class="nav-text">重做日志（redo log）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Undo-日志"><span class="nav-number">2.2.</span> <span class="nav-text">Undo 日志</span></a></li></ol></li></ol></div>
             
 
           </div>
