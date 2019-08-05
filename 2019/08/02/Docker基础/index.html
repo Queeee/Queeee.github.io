@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next gemini use-motion" lang="en">
+<html class="theme-next gemini use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,9 +85,9 @@
 <meta property="og:url" content="http://yoursite.com/2019/08/02/Docker基础/index.html">
 <meta property="og:site_name" content="Queeee&#39;s blog">
 <meta property="og:description" content="Docker简介基础概念Docker是一个用户开发、发布和运行应用的开放平台，Docker使您能够将应用程序与基础架构分离以便快速交付应用。使用Docker，您可以和管理应用程序一样管理基础架构。通过利用Docker的方法快速地交付、测试和部署代码，您可以显著地减少编写代码和在生产环境中运行代码的延迟。 我可以使用Docker来做什么？快速、一致地交付您的应用由于Docker允许开发人员使用本地容">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/08/02/Docker基础/Docker%E5%9F%BA%E7%A1%80/DockerArchitecture.png">
-<meta property="og:updated_time" content="2019-08-02T08:12:26.613Z">
+<meta property="og:updated_time" content="2019-08-05T07:27:02.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker基础">
 <meta name="twitter:description" content="Docker简介基础概念Docker是一个用户开发、发布和运行应用的开放平台，Docker使您能够将应用程序与基础架构分离以便快速交付应用。使用Docker，您可以和管理应用程序一样管理基础架构。通过利用Docker的方法快速地交付、测试和部署代码，您可以显著地减少编写代码和在生产环境中运行代码的延迟。 我可以使用Docker来做什么？快速、一致地交付您的应用由于Docker允许开发人员使用本地容">
@@ -107,7 +107,7 @@
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -139,7 +139,7 @@
 
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -187,7 +187,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            Home
+            首页
           </a>
         </li>
       
@@ -197,7 +197,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
-            Categories
+            分类
           </a>
         </li>
       
@@ -207,7 +207,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
-            Archives
+            归档
           </a>
         </li>
       
@@ -271,15 +271,27 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Posted on</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-02T09:25:08+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-02T09:25:08+08:00">
                 2019-08-02
               </time>
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于&#58;</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-05T15:27:02+08:00">
+                2019-08-05
+              </time>
             
           </span>
 
@@ -292,7 +304,7 @@
                 <i class="fa fa-folder-o"></i>
               </span>
               
-                <span class="post-meta-item-text">In</span>
+                <span class="post-meta-item-text">分类于</span>
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -315,7 +327,43 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.6k
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  9
+                </span>
+              
+            </div>
           
 
           
@@ -341,22 +389,65 @@
 <ul>
 <li>服务器是一种长时间运行的程序，称为守护进程(dockerd命令)</li>
 <li>一个REST API，它指定了一些接口，程序可以使用这些接口与守护进程对话并指示它做什么。</li>
-<li>命令行接口(CLI)客户端(docker命令)。<br><img src="Docker%E5%9F%BA%E7%A1%80/DockerArchitecture.png" alt="Docker架构"></li>
+<li>命令行接口(<code>CLI</code>)客户端(docker命令)。<br><img src="Docker%E5%9F%BA%E7%A1%80/DockerArchitecture.png" alt="Docker架构"></li>
 </ul>
 <p><strong>参考：</strong></p>
 <ul>
 <li><a href="https://docs.docker.com/engine/docker-overview/" target="_blank" rel="noopener"><strong>Dokcer官方介绍</strong></a></li>
 </ul>
-<h1 id="镜像-Image"><a href="#镜像-Image" class="headerlink" title="镜像(Image)"></a>镜像(Image)</h1><h2 id="基础概念-1"><a href="#基础概念-1" class="headerlink" title="基础概念"></a>基础概念</h2><p>一个镜像是只读模块，包含运行应用程序所需的所有内容——代码，运行环境，库，环境变量，和配置文件。通常，一个镜像以另一个镜像为基础，并添加一些额外的自定义内容。要创建自己的镜像，你可以通过一些简单的语法来创建<strong>DockerFile</strong>，其中定义了创建和运行镜像的步骤。DockerFile中的每条指令都在镜像中创建了一个层。当你重写了DockerFile并重建镜像时，仅外面的层会被改变并重建。</p>
-<h1 id="容器-Container"><a href="#容器-Container" class="headerlink" title="容器(Container)"></a>容器(Container)</h1><h2 id="基础概念-2"><a href="#基础概念-2" class="headerlink" title="基础概念"></a>基础概念</h2><p>容器是镜像的运行时实例——镜像在被执行时在内存中变为什么（即具有状态的镜像或用户进程）。您可以使用命令docker ps查看正在运行中的容器列表，就像在Linux中一样。<br>默认情况下，容器与其他容器、它的主机间相对隔离。您可以控制容器与网络、存储或其他基础子系统与其他容器或主机的隔离程度</p>
+<h1 id="镜像-Image"><a href="#镜像-Image" class="headerlink" title="镜像(Image)"></a>镜像(Image)</h1><h2 id="基础概念-1"><a href="#基础概念-1" class="headerlink" title="基础概念"></a>基础概念</h2><p>一个镜像是只读模块，包含运行应用程序所需的所有内容——代码，运行环境，库，环境变量，和配置文件。通常，一个镜像以另一个镜像为基础，并添加一些额外的自定义内容。要创建自己的镜像，你可以通过一些简单的语法来创建<code>Dockerfile</code>，其中定义了创建和运行镜像的步骤。换句话说，镜像只读图层（<strong>layer</strong>）组成，其中每个图层代表一个<code>Dockerfile</code>的指令。这些图层是堆叠的并且每个图层是前一层变化的增量。</p>
+<h1 id="容器-Container"><a href="#容器-Container" class="headerlink" title="容器(Container)"></a>容器(Container)</h1><h2 id="基础概念-2"><a href="#基础概念-2" class="headerlink" title="基础概念"></a>基础概念</h2><ul>
+<li>容器是镜像的运行时实例——镜像在被执行时在内存中变为什么（即具有状态的镜像或用户进程）。您可以使用命令docker ps查看正在运行中的容器列表，就像在Linux中一样。默认情况下，容器与其他容器、它的主机间相对隔离。您可以控制容器与网络、存储或其他基础子系统与其他容器或主机的隔离程度</li>
+<li>当运行镜像生成容器时，在底部图层的顶部添加了一个新的可写图层（<strong>container layer</strong>）,对正在运行的容器作出的所有更改，比如写入新文件，修改已存在的文件，删除文件都将被写入此可写容器层。</li>
+</ul>
 <h1 id="仓库-Repository"><a href="#仓库-Repository" class="headerlink" title="仓库(Repository)"></a>仓库(Repository)</h1><h2 id="基础概念-3"><a href="#基础概念-3" class="headerlink" title="基础概念"></a>基础概念</h2><p>注册表是仓库的集合，仓库是镜像的集合——类似于Github存储库，除了代码已经构建。注册表上的账户可以创建多个仓库。docker cli默认使用Docker的公共注册表。</p>
-<h2 id="服务-Service"><a href="#服务-Service" class="headerlink" title="服务(Service)"></a>服务(Service)</h2><p>在容器之上的是服务，它定义了容器在生产中的行为方式。</p>
-<blockquote>
-<p>Above <strong>container</strong> is a <strong>service</strong>, which defines how containers behave in production</p>
-</blockquote>
-<h2 id="堆栈-Stack"><a href="#堆栈-Stack" class="headerlink" title="堆栈(Stack)"></a>堆栈(Stack)</h2><h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">## List Docker CLI commands</span><br><span class="line">docker</span><br><span class="line">docker container --help</span><br><span class="line"></span><br><span class="line">## Display Docker version and info</span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line">## Execute Docker image</span><br><span class="line">docker run hello-world</span><br><span class="line"></span><br><span class="line">## List Docker images</span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line">## List Docker containers (running, all, all in quiet mode)</span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br></pre></td></tr></table></figure>
+<h1 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h1><h2 id="基础概念-4"><a href="#基础概念-4" class="headerlink" title="基础概念"></a>基础概念</h2><p>DockerFile定义了容器内的环境中发生了什么。对网络接口和磁盘驱动器等资源的访问在此环境中进行虚拟化，该环境与系统的其他部分隔离，所以您需要将外部的世界映射到端口上，并且明确您想“复制”到该环境中的文件。</p>
+<h2 id="构建上下文"><a href="#构建上下文" class="headerlink" title="构建上下文"></a>构建上下文</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><p>当您发<code>docker build</code>命令，当前工作目录称为构建上下文。默认情况下，假设Dockerfile位于此处，但您可以使用文件标志（-f）指定一个不同的位置。不管Dockerfile的实际存放位置如何，当前目录中所有文件和目录的递归都将作为构建上下文被发送至Docker守护程序。若您想要看构建上下文的大小，请留意构建<code>Dockerfile</code>的信息：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sending build context to Docker daemon  <span class="number">187.8</span>MB</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker build -t friendlyhello .  # Create image using this directory&apos;s Dockerfile</span><br><span class="line">docker run -p 4000:80 friendlyhello  # Run &quot;friendlyhello&quot; mapping port 4000 to 80</span><br><span class="line">docker run -d -p 4000:80 friendlyhello         # Same thing, but in detached mode</span><br><span class="line">docker container ls                                # List all running containers</span><br><span class="line">docker container ls -a             # List all containers, even those not running</span><br><span class="line">docker container stop &lt;hash&gt;           # Gracefully stop the specified container</span><br><span class="line">docker container kill &lt;hash&gt;         # Force shutdown of the specified container</span><br><span class="line">docker container rm &lt;hash&gt;        # Remove specified container from this machine</span><br><span class="line">docker container rm $(docker container ls -a -q)         # Remove all containers</span><br><span class="line">docker image ls -a                             # List all images on this machine</span><br><span class="line">docker image rm &lt;image id&gt;            # Remove specified image from this machine</span><br><span class="line">docker image rm $(docker image ls -a -q)   # Remove all images from this machine</span><br><span class="line">docker login             # Log in this CLI session using your Docker credentials</span><br><span class="line">docker tag &lt;image&gt; username/repository:tag  # Tag &lt;image&gt; for upload to registry</span><br><span class="line">docker push username/repository:tag            # Upload tagged image to registry</span><br><span class="line">docker run username/repository:tag                   # Run image from a registry</span><br></pre></td></tr></table></figure>
+<h3 id="Pipe-Dockerfile-through-stdin"><a href="#Pipe-Dockerfile-through-stdin" class="headerlink" title="Pipe Dockerfile through stdin"></a>Pipe Dockerfile through <code>stdin</code></h3><ul>
+<li><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/#pipe-dockerfile-through-stdin" target="_blank" rel="noopener"><strong>此部分建议参考文档</strong></a></li>
+</ul>
+<h2 id="使用-dockerignore进行排除"><a href="#使用-dockerignore进行排除" class="headerlink" title="使用.dockerignore进行排除"></a>使用.dockerignore进行排除</h2><p>要排除与构建无关的文件（不重构源存储库），请使用<code>.dockerignore</code>文件。此文件支持与.gitignore文件类似的排除模式。有关创建一个<code>.dockerignore</code>的信息，请参阅<a href="https://docs.docker.com/engine/reference/builder/#dockerignore-file" target="_blank" rel="noopener"><code>.dockerignore</code></a>。</p>
+<h2 id="使用多级构建"><a href="#使用多级构建" class="headerlink" title="使用多级构建"></a>使用多级构建</h2><p>多级构建允许您大幅减小最终镜像的大小，而无需减少中间层和文件的数量。<br>例如，如果您的构建层包含多个图层，则可以从较不频繁更改（以确保构建缓存可重用）到更频繁更改的顺序对它们进行排序：</p>
+<ul>
+<li>安装构建应用程序所需要的工具</li>
+<li>安装或更新库依赖项</li>
+<li>生成您的应用程序</li>
+</ul>
+<h2 id="解藕应用程序"><a href="#解藕应用程序" class="headerlink" title="解藕应用程序"></a>解藕应用程序</h2><p>每个容器应当只有一个关注点，将应用程序分离到多个容器中，使其更容易水平扩展和重用容器。例如，一个web应用程序可能包含三个独立的容器，每个容器都有其独特的镜像，以分离的方式管理web应用程序、数据句和内容缓存。</p>
+<h2 id="最小化层数"><a href="#最小化层数" class="headerlink" title="最小化层数"></a>最小化层数</h2><p>在旧版本的Docker中，最大限度地减少镜像中的图层数量以确保它们具有高性能非常重要。添加了以下功能以减少此限制：</p>
+<ul>
+<li>只有<code>RUN</code>，<code>COPY</code>，<code>ADD</code>指令会创建图层，其他指令会创建临时图层，不会增加最终构建的大小。</li>
+<li>在可能的情况下，使用多级构建，并且只将您需要的工件复制到镜像中。这允许您在中间构建阶段中包含工具和调试信息，而不会增加最终图像的大小。</li>
+</ul>
+<h2 id="多行参数排序"><a href="#多行参数排序" class="headerlink" title="多行参数排序"></a>多行参数排序</h2><p>只要可能，通过对多行参数进行字母数字排序来简化后面的更改。这有助于避免重复包并使列表更容易更新。这也使PR更容易阅​​读和审查。在反斜杠（<code>\</code>）之前添加空格也有帮助。例子如下：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span> apt-get update &amp;&amp; apt-get install -y \</span><br><span class="line">  bzr \</span><br><span class="line">  cvs \</span><br><span class="line">  git \</span><br><span class="line">  mercurial \</span><br><span class="line">  subversion</span><br></pre></td></tr></table></figure>
+
+<h2 id="利用构建缓存"><a href="#利用构建缓存" class="headerlink" title="利用构建缓存"></a>利用构建缓存</h2><p>当构建镜像时，Docker会逐步遍历<code>Dockerfile</code>中的指令，按定义顺序执行每条指令。Docker会在其缓存中查找可以重用的现有映像，而不是创建新的（重复）映像。<br>如果您根本不想使用缓存，您可以在<code>docker build</code>命令上使用<code>--no-cache=true</code>选项。但是，如果您想让Docker使用其缓存，重要的是要理解何时可以找到匹配的图像，何时不能找到匹配的图像。Docker遵循的基本规则如下:</p>
+<ul>
+<li>从已存在缓存中的父镜像开始，下一条指令会从所有从该基础镜像中衍生的子镜像进行比较，以查看它们中的一个是否完全使用相同的指令构建。如果不是，则缓存无效。</li>
+<li>在大多数情况下，简单的将<code>Dockerfile</code>与子镜像中的指令进行比较就足够了。但是，某些说明需要更多的检查和解释。</li>
+<li>对于<code>ADD</code>和<code>COPY</code>指令，检查图像中文件的内容，并计算每个文件的校验和。在这些校验和中不考虑最后修改时间和最后访问时间。在缓存找寻期间，将校验和与现有镜像中校验和进行比较。如果文件中的内容（例如内容和元数据）发生任何改变，缓存将失效。</li>
+<li>除了<code>ADD</code>和<code>COPY</code>命令以外，除了添加和复制命令外，缓存检查不会查看容器中的文件来确定缓存匹配。例如，在处理<code>RUN apt-get -y update</code>命令时，不会检查容器中更新的文件，以确定缓存是否命中。在这种情况下，仅使用命令字符串本身来查找匹配项。</li>
+</ul>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> &lt;image&gt; [AS &lt;name&gt;]</span><br></pre></td></tr></table></figure>
+
+<p>Or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FROM &lt;image&gt;[:&lt;tag&gt;] [AS &lt;name&gt;]</span><br></pre></td></tr></table></figure>
+
+<p>Or</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FROM &lt;image&gt;[@&lt;digest&gt;] [AS &lt;name&gt;]</span><br></pre></td></tr></table></figure>
+
+<p><code>FROM</code>指令初始化一个新的构建阶段并为后续指令设置初始镜像。因此，有效的<code>Dockerfile</code>必须以<code>FROM</code>指令开头。该镜像可以是任何有效的镜像——通过从公共存储库中提取镜像来启动它尤其容易。</p>
+<ul>
+<li>ARG是在<code>Dockerfile</code>中唯一一个可以先于<code>FROM</code>的指令。</li>
+<li><code>FROM</code>可以在一个<code>Dockerfile</code>中出现多次，以创建多个图像，或者使用一个构建阶段作为另一个构建阶段的依赖项。只需在每条新FROM指令之前记下提交输出的最后一个图像ID。每个FROM指令清除以前的指令创建的任何状态。</li>
+<li>该<code>tag</code>或<code>digest</code>值是可选的。如果省略其中任何一个，则构建器默认采用latest标记。如果找不到tag值，构建器将返回错误。</li>
+</ul>
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## List Docker CLI commands</span></span><br><span class="line">docker</span><br><span class="line">docker container --help</span><br><span class="line"></span><br><span class="line"><span class="comment">## Display Docker version and info</span></span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line"><span class="comment">## Execute Docker image</span></span><br><span class="line">docker <span class="keyword">run</span> hello-world</span><br><span class="line"></span><br><span class="line"><span class="comment">## List Docker images</span></span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line"><span class="comment">## List Docker containers (running, all, all in quiet mode)</span></span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker build -t friendlyhello .  <span class="comment"># Create image using this directory's Dockerfile</span></span><br><span class="line">docker <span class="keyword">run</span> -p 4000:80 friendlyhello  # Run "friendlyhello" mapping port 4000 to 80</span><br><span class="line">docker <span class="keyword">run</span> -d -p 4000:80 friendlyhello         # Same thing, but in detached mode</span><br><span class="line">docker container ls                                <span class="comment"># List all running containers</span></span><br><span class="line">docker container ls -a             <span class="comment"># List all containers, even those not running</span></span><br><span class="line">docker container stop &lt;hash&gt;           <span class="comment"># Gracefully stop the specified container</span></span><br><span class="line">docker container kill &lt;hash&gt;         <span class="comment"># Force shutdown of the specified container</span></span><br><span class="line">docker container rm &lt;hash&gt;        <span class="comment"># Remove specified container from this machine</span></span><br><span class="line">docker container rm $(docker container ls -a -q)         <span class="comment"># Remove all containers</span></span><br><span class="line">docker image ls -a                             <span class="comment"># List all images on this machine</span></span><br><span class="line">docker image rm &lt;image id&gt;            <span class="comment"># Remove specified image from this machine</span></span><br><span class="line">docker image rm $(docker image ls -a -q)   <span class="comment"># Remove all images from this machine</span></span><br><span class="line">docker login             <span class="comment"># Log in this CLI session using your Docker credentials</span></span><br><span class="line">docker tag &lt;image&gt; username/repository:tag  <span class="comment"># Tag &lt;image&gt; for upload to registry</span></span><br><span class="line">docker push username/repository:tag            <span class="comment"># Upload tagged image to registry</span></span><br><span class="line">docker <span class="keyword">run</span> username/repository:tag                   # Run image from a registry</span><br></pre></td></tr></table></figure>
 
 <h1 id="服务"><a href="#服务" class="headerlink" title="服务"></a>服务</h1>
       
@@ -449,10 +540,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
+            文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
+            站点概览
           </li>
         </ul>
       
@@ -475,7 +566,7 @@
                 <a href="/archives/">
               
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">posts</span>
+                  <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
@@ -486,7 +577,7 @@
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
                   <span class="site-state-item-count">3</span>
-                  <span class="site-state-item-name">categories</span>
+                  <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
@@ -530,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker简介"><span class="nav-number">1.</span> <span class="nav-text">Docker简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我可以使用Docker来做什么？"><span class="nav-number">1.2.</span> <span class="nav-text">我可以使用Docker来做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速、一致地交付您的应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">快速、一致地交付您的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式部署和扩展"><span class="nav-number">1.2.2.</span> <span class="nav-text">响应式部署和扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在相同的硬件上运行更多的工作负载"><span class="nav-number">1.2.3.</span> <span class="nav-text">在相同的硬件上运行更多的工作负载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker架构"><span class="nav-number">1.3.</span> <span class="nav-text">Docker架构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#镜像-Image"><span class="nav-number">2.</span> <span class="nav-text">镜像(Image)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容器-Container"><span class="nav-number">3.</span> <span class="nav-text">容器(Container)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-2"><span class="nav-number">3.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#仓库-Repository"><span class="nav-number">4.</span> <span class="nav-text">仓库(Repository)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-3"><span class="nav-number">4.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务-Service"><span class="nav-number">4.2.</span> <span class="nav-text">服务(Service)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈-Stack"><span class="nav-number">4.3.</span> <span class="nav-text">堆栈(Stack)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DockerFile"><span class="nav-number">4.4.</span> <span class="nav-text">DockerFile</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令"><span class="nav-number">5.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务"><span class="nav-number">6.</span> <span class="nav-text">服务</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker简介"><span class="nav-number">1.</span> <span class="nav-text">Docker简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我可以使用Docker来做什么？"><span class="nav-number">1.2.</span> <span class="nav-text">我可以使用Docker来做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速、一致地交付您的应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">快速、一致地交付您的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式部署和扩展"><span class="nav-number">1.2.2.</span> <span class="nav-text">响应式部署和扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在相同的硬件上运行更多的工作负载"><span class="nav-number">1.2.3.</span> <span class="nav-text">在相同的硬件上运行更多的工作负载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker架构"><span class="nav-number">1.3.</span> <span class="nav-text">Docker架构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#镜像-Image"><span class="nav-number">2.</span> <span class="nav-text">镜像(Image)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容器-Container"><span class="nav-number">3.</span> <span class="nav-text">容器(Container)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-2"><span class="nav-number">3.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#仓库-Repository"><span class="nav-number">4.</span> <span class="nav-text">仓库(Repository)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-3"><span class="nav-number">4.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DockerFile"><span class="nav-number">5.</span> <span class="nav-text">DockerFile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-4"><span class="nav-number">5.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建上下文"><span class="nav-number">5.2.</span> <span class="nav-text">构建上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">5.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pipe-Dockerfile-through-stdin"><span class="nav-number">5.2.2.</span> <span class="nav-text">Pipe Dockerfile through stdin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-dockerignore进行排除"><span class="nav-number">5.3.</span> <span class="nav-text">使用.dockerignore进行排除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用多级构建"><span class="nav-number">5.4.</span> <span class="nav-text">使用多级构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解藕应用程序"><span class="nav-number">5.5.</span> <span class="nav-text">解藕应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小化层数"><span class="nav-number">5.6.</span> <span class="nav-text">最小化层数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多行参数排序"><span class="nav-number">5.7.</span> <span class="nav-text">多行参数排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用构建缓存"><span class="nav-number">5.8.</span> <span class="nav-text">利用构建缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">5.9.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FROM"><span class="nav-number">5.9.1.</span> <span class="nav-text">FROM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令"><span class="nav-number">6.</span> <span class="nav-text">命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务"><span class="nav-number">7.</span> <span class="nav-text">服务</span></a></li></ol></div>
             
 
           </div>
@@ -560,7 +651,7 @@
 </div>
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
 
 
 
@@ -568,12 +659,35 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
 
 
 
 
         
+<div class="busuanzi-count">
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
