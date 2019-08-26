@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Docker,">
 
 
 
@@ -80,18 +80,19 @@
 
 
 <meta name="description" content="Docker简介基础概念Docker是一个用户开发、发布和运行应用的开放平台，Docker使您能够将应用程序与基础架构分离以便快速交付应用。使用Docker，您可以和管理应用程序一样管理基础架构。通过利用Docker的方法快速地交付、测试和部署代码，您可以显著地减少编写代码和在生产环境中运行代码的延迟。 我可以使用Docker来做什么？快速、一致地交付您的应用由于Docker允许开发人员使用本地容">
+<meta name="keywords" content="Docker">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Docker基础">
 <meta property="og:url" content="http://yoursite.com/2019/08/02/Docker基础/index.html">
 <meta property="og:site_name" content="Queeee&#39;s blog">
 <meta property="og:description" content="Docker简介基础概念Docker是一个用户开发、发布和运行应用的开放平台，Docker使您能够将应用程序与基础架构分离以便快速交付应用。使用Docker，您可以和管理应用程序一样管理基础架构。通过利用Docker的方法快速地交付、测试和部署代码，您可以显著地减少编写代码和在生产环境中运行代码的延迟。 我可以使用Docker来做什么？快速、一致地交付您的应用由于Docker允许开发人员使用本地容">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2019/08/02/Docker基础/Docker%E5%9F%BA%E7%A1%80/DockerArchitecture.png">
-<meta property="og:updated_time" content="2019-08-14T12:36:58.901Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/02/Docker基础/DockerArchitecture.png">
+<meta property="og:updated_time" content="2019-08-26T16:11:13.779Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Docker基础">
 <meta name="twitter:description" content="Docker简介基础概念Docker是一个用户开发、发布和运行应用的开放平台，Docker使您能够将应用程序与基础架构分离以便快速交付应用。使用Docker，您可以和管理应用程序一样管理基础架构。通过利用Docker的方法快速地交付、测试和部署代码，您可以显著地减少编写代码和在生产环境中运行代码的延迟。 我可以使用Docker来做什么？快速、一致地交付您的应用由于Docker允许开发人员使用本地容">
-<meta name="twitter:image" content="http://yoursite.com/2019/08/02/Docker基础/Docker%E5%9F%BA%E7%A1%80/DockerArchitecture.png">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/02/Docker基础/DockerArchitecture.png">
 
 
 
@@ -188,6 +189,16 @@
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
           </a>
         </li>
       
@@ -289,8 +300,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2019-08-14T20:36:58+08:00">
-                2019-08-14
+              <time title="更新于" itemprop="dateModified" datetime="2019-08-27T00:11:13+08:00">
+                2019-08-27
               </time>
             
           </span>
@@ -344,7 +355,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.3k
+                  6.6k
                 </span>
               
 
@@ -360,7 +371,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  20
+                  25
                 </span>
               
             </div>
@@ -389,7 +400,7 @@
 <ul>
 <li>服务器是一种长时间运行的程序，称为守护进程(dockerd命令)</li>
 <li>一个REST API，它指定了一些接口，程序可以使用这些接口与守护进程对话并指示它做什么。</li>
-<li>命令行接口(<code>CLI</code>)客户端(docker命令)。<br><img src="Docker%E5%9F%BA%E7%A1%80/DockerArchitecture.png" alt="Docker架构"></li>
+<li>命令行接口(<code>CLI</code>)客户端(docker命令)。<br><img src="./DockerArchitecture.png" alt="Docker架构"></li>
 </ul>
 <p><strong>参考：</strong></p>
 <ul>
@@ -540,6 +551,54 @@
 <figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">RUN</span> mkdir -p /usr/src/things \</span><br><span class="line">    &amp;&amp; curl -SL http://example.com/big.tar.xz \</span><br><span class="line">    | tar -xJC /usr/src/things \</span><br><span class="line">    &amp;&amp; make -C /usr/src/things all</span><br></pre></td></tr></table></figure>
 
 <p>对于不需要<code>ADD</code>的tar自动提取功能的其他项目（文件、目录），您应当一直使用<code>COPY</code>.</p>
+<h3 id="ENTRYPOINT"><a href="#ENTRYPOINT" class="headerlink" title="ENTRYPOINT"></a>ENTRYPOINT</h3><p><code>ENTRYPOINT</code>的最佳用法是去设置镜像的主命令，允许像运行命令一样运行该镜像（然后使用<code>CMD做默认标识</code>）。<br>我们从命令行工具<code>s3cmd</code>的镜像作为例子开始：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ENTRYPOINT</span> ["s3cmd"]</span><br><span class="line"><span class="keyword">CMD</span> ["--help"]</span><br></pre></td></tr></table></figure>
+
+<p>现在该镜像可以像下面这种方式运行来显示命令的帮助：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="keyword">run</span> s3cmd</span><br></pre></td></tr></table></figure>
+
+<p>或使用正确的参数来执行该命令：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker <span class="keyword">run</span> s3cmd ls s3://mybucket</span><br></pre></td></tr></table></figure>
+
+<p><code>ENTRYPOINT</code>指令也可以与辅助脚本结合使用,允许其像上面的命令一样运行，即使启用该工具可能需要多个步骤。<br>比如， Postgres官方镜像使用如下的脚本作为其<code>ENTRYPOINT</code>：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/bash</span></span><br><span class="line">set -e</span><br><span class="line"></span><br><span class="line">if [ <span class="string">"$1"</span> = <span class="string">'postgres'</span> ]; then</span><br><span class="line">    chown -R postgres <span class="string">"$PGDATA"</span></span><br><span class="line"></span><br><span class="line">    if [ -z <span class="string">"$(ls -A "</span>$PGDATA<span class="string">")"</span> ]; then</span><br><span class="line">        gosu postgres initdb</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    exec gosu postgres <span class="string">"$@"</span></span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">exec <span class="string">"$@"</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="VOLUMN"><a href="#VOLUMN" class="headerlink" title="VOLUMN"></a>VOLUMN</h3><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">VOLUME</span> ["/data"]</span><br><span class="line"><span class="keyword">VOLUME</span> /data</span><br></pre></td></tr></table></figure>
+
+<p><code>VOLUMN</code>指令应该用于公开由docker容器创建的任何数据库存储区域、配置存储或文件/文件夹。强烈建议对镜像的任何可变和/或用户可服务的部分使用VOLUME。</p>
+<blockquote>
+<p>为了防止运行时用户忘记将动态文件所保存目录挂载为卷，在 Dockerfile 中，我们可以事先指定某些目录挂载为匿名卷，这样在运行时如果用户不指定挂载，其应用也可以正常运行，不会向容器存储层写入大量数据。</p>
+</blockquote>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">VOLUME</span> /data</span><br></pre></td></tr></table></figure>
+
+<p>这里的 /data 目录就会在运行时自动挂载为匿名卷，任何向 /data 中写入的信息都不会记录进容器存储层，从而保证了容器存储层的&gt;无状态化。当然，运行时可以覆盖这个挂载设置。比如：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">run</span> -d -v mydata:/data xxxx</span><br></pre></td></tr></table></figure>
+
+<p>在这行命令中，就使用了 mydata 这个命名卷挂载到了 /data 这个位置，替代了 Dockerfile 中定义的匿名卷的挂载配置。</p>
+<h3 id="USER"><a href="#USER" class="headerlink" title="USER"></a>USER</h3><p>如果一个服务可以在没有权限的情况下运行，请使用<code>USER</code>更改为非root用户。首先使用类似于<code>RUN groupadd -r postgres &amp;&amp; useradd --no-log-init -r -g postgres postgres</code>在<code>Dockerfile</code>中创建用户和组.</p>
+<h3 id="WORKDIR"><a href="#WORKDIR" class="headerlink" title="WORKDIR"></a>WORKDIR</h3><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WORKDIR</span> /path/to/workdir</span><br></pre></td></tr></table></figure>
+
+<p><code>WORKDIR</code>指令为在<code>Dockerfile</code>中<code>WORKDIR</code>随后的<code>RUN</code>, <code>CMD</code>, <code>ENTRYPOINT</code>, <code>COPY</code> 和 <code>ADD</code>指令设置工作目录。如果<code>WORKDIR</code>不存在，该目录会被创建，即使在任何随后的<code>Dockerfile</code>中没有使用它。<br><code>WORKDIR</code>指令可以在<code>Dockerfile</code>中使用多次。如果提供了相对路径，则它将相对于前一条<code>WORKDIR</code>指令的路径。例如：</p>
+<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">WORKDIR</span> /a</span><br><span class="line"><span class="keyword">WORKDIR</span> b</span><br><span class="line"><span class="keyword">WORKDIR</span> c</span><br><span class="line"><span class="keyword">RUN</span> pwd</span><br></pre></td></tr></table></figure>
+
+<p>在此<code>Dockerfile</code>中最后<code>pwd</code>命令的输出会是<code>/a/b/c</code>。<br><code>WORKDIR</code>指令可以解析先前使用<code>ENV</code>设置的环境变量。您只能使用在<code>Dockerfile</code>中显式设置的环境变量。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ENV DIRPATH /path</span><br><span class="line">WORKDIR $DIRPATH/$DIRNAME</span><br><span class="line">RUN pwd</span><br></pre></td></tr></table></figure>
+
+<p>在此<code>Dockerfile</code>中最后<code>pwd</code>命令的输出会是<code>/path/$DIRNAME</code>。<br>为了清晰和可靠，您应该始终为您的<code>WORKDIR</code>使用绝对路径。此外，您应该使用<code>WORKDIR</code>，而不是大量像<code>RUN cd…&amp;&amp; do-something</code>这样的指令，这些指令很难阅读、排除故障和维护。</p>
+<h3 id="ONBUILD"><a href="#ONBUILD" class="headerlink" title="ONBUILD"></a>ONBUILD</h3><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ONBUILD</span> [INSTRUCTION]</span><br></pre></td></tr></table></figure>
+
+<p><code>ONBUILD</code>命令在当前<code>Dockerfile</code>构建完成后执行。<code>ONBUILD</code>指令在任何从当前镜像中导出的镜像中执行。可以将<code>ONBUILD</code>命令视为父<code>Dockerfile</code>给子<code>Dockerfile</code>的指令。<br>Docker构建在子<code>Dockerfile</code>中的任何命令之前执行<code>ONBUILD</code>命令。<br>任何指令都可以注册成为一个触发器。<br>如果您要构建一个镜像并将其作为构建其他镜像的基础，这非常有用，例如一个应用程序构建环境或一个守护进程，它可以使用特定于用户的配置进行定制。<br>例如，如果您的镜像是一个可重用的Python应用程序构建器，则需要将应用程序源代码添加到特定的目录，并且可能在这之后调用构建脚本。您现在不能只是调用<code>ADD</code>和<code>RUN</code>，因为您现在还没有访问应用程序的源代码，每个应用程序构建这都将是不同的。您可以简单地为应用程序开发人员提供一个<code>Dockerfile</code>样例文件来复制粘贴到他们的应用程序中，但是这是低效的，容易出错的，而且很难更新，因为它与应用程序特定的代码混合在一起。<br>解决方案是使用<code>ONBUILD</code>来注册要在下一个构建阶段运行的预先指令。<br>以下是他的工作原理：</p>
+<ol>
+<li>当遇到<code>ONBUILD</code>指令时，构建器会向正在构建的镜像元数据添加一个触发器。该指令不会影响当前构建。</li>
+<li>在构建结束后，所有触发器的列表存储在镜像清单中的<code>OnBuild</code>键下,可以使用<code>docker inspect</code>命令检查。</li>
+<li>之后可以使用<code>FROM</code>指令来将该镜像作为一个新的构建的基础。作为处理<code>FROM</code>指令的一部分，下游构建器将查找<code>ONBUILD</code>触发器，并且按照他们注册的顺序执行他们。如果任何触发器失败，则会导致<code>FROM</code>终止，反过来导致构建失败。如果所有的构建器成功，<code>FROM</code>指令完成并且该构建继续照常进行。</li>
+<li>触发器在最终执行完成后从镜像中移除。<br>例如，您可能添加一些像这样：<figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[...]</span><br><span class="line"><span class="keyword">ONBUILD</span> <span class="keyword">ADD</span> . /app/src</span><br><span class="line"><span class="keyword">ONBUILD</span> <span class="keyword">RUN</span> /usr/local/bin/python-build --dir /app/src</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<blockquote>
+<p>警告：不允许<code>ONBUILD</code>使用链接指令<code>ONBUILD ONBUILD</code>。<br>警告：<code>ONBUILD</code>指令可能不会触发<code>FROM</code>或<code>MAINTAINER</code>指令。</p>
+</blockquote>
 <h1 id="指令-1"><a href="#指令-1" class="headerlink" title="指令"></a>指令</h1><figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## List Docker CLI commands</span></span><br><span class="line">docker</span><br><span class="line">docker container --help</span><br><span class="line"></span><br><span class="line"><span class="comment">## Display Docker version and info</span></span><br><span class="line">docker --version</span><br><span class="line">docker version</span><br><span class="line">docker info</span><br><span class="line"></span><br><span class="line"><span class="comment">## Execute Docker image</span></span><br><span class="line">docker <span class="keyword">run</span> hello-world</span><br><span class="line"></span><br><span class="line"><span class="comment">## List Docker images</span></span><br><span class="line">docker image ls</span><br><span class="line"></span><br><span class="line"><span class="comment">## List Docker containers (running, all, all in quiet mode)</span></span><br><span class="line">docker container ls</span><br><span class="line">docker container ls --all</span><br><span class="line">docker container ls -aq</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight docker"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker build -t friendlyhello .  <span class="comment"># Create image using this directory's Dockerfile</span></span><br><span class="line">docker <span class="keyword">run</span> -p 4000:80 friendlyhello  # Run "friendlyhello" mapping port 4000 to 80</span><br><span class="line">docker <span class="keyword">run</span> -d -p 4000:80 friendlyhello         # Same thing, but in detached mode</span><br><span class="line">docker container ls                                <span class="comment"># List all running containers</span></span><br><span class="line">docker container ls -a             <span class="comment"># List all containers, even those not running</span></span><br><span class="line">docker container stop &lt;hash&gt;           <span class="comment"># Gracefully stop the specified container</span></span><br><span class="line">docker container kill &lt;hash&gt;         <span class="comment"># Force shutdown of the specified container</span></span><br><span class="line">docker container rm &lt;hash&gt;        <span class="comment"># Remove specified container from this machine</span></span><br><span class="line">docker container rm $(docker container ls -a -q)         <span class="comment"># Remove all containers</span></span><br><span class="line">docker image ls -a                             <span class="comment"># List all images on this machine</span></span><br><span class="line">docker image rm &lt;image id&gt;            <span class="comment"># Remove specified image from this machine</span></span><br><span class="line">docker image rm $(docker image ls -a -q)   <span class="comment"># Remove all images from this machine</span></span><br><span class="line">docker login             <span class="comment"># Log in this CLI session using your Docker credentials</span></span><br><span class="line">docker tag &lt;image&gt; username/repository:tag  <span class="comment"># Tag &lt;image&gt; for upload to registry</span></span><br><span class="line">docker push username/repository:tag            <span class="comment"># Upload tagged image to registry</span></span><br><span class="line">docker <span class="keyword">run</span> username/repository:tag                   # Run image from a registry</span><br></pre></td></tr></table></figure>
@@ -559,6 +618,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
+          
+        </div>
+      
 
       
       
@@ -577,6 +642,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/21/RabbitMQ/" rel="prev" title="RabbitMQ">
+                RabbitMQ <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -660,7 +729,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -671,12 +740,21 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -716,7 +794,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker简介"><span class="nav-number">1.</span> <span class="nav-text">Docker简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我可以使用Docker来做什么？"><span class="nav-number">1.2.</span> <span class="nav-text">我可以使用Docker来做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速、一致地交付您的应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">快速、一致地交付您的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式部署和扩展"><span class="nav-number">1.2.2.</span> <span class="nav-text">响应式部署和扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在相同的硬件上运行更多的工作负载"><span class="nav-number">1.2.3.</span> <span class="nav-text">在相同的硬件上运行更多的工作负载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker架构"><span class="nav-number">1.3.</span> <span class="nav-text">Docker架构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#镜像-Image"><span class="nav-number">2.</span> <span class="nav-text">镜像(Image)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容器-Container"><span class="nav-number">3.</span> <span class="nav-text">容器(Container)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-2"><span class="nav-number">3.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#仓库-Repository"><span class="nav-number">4.</span> <span class="nav-text">仓库(Repository)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-3"><span class="nav-number">4.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DockerFile"><span class="nav-number">5.</span> <span class="nav-text">DockerFile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-4"><span class="nav-number">5.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建上下文"><span class="nav-number">5.2.</span> <span class="nav-text">构建上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">5.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pipe-Dockerfile-through-stdin"><span class="nav-number">5.2.2.</span> <span class="nav-text">Pipe Dockerfile through stdin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-dockerignore进行排除"><span class="nav-number">5.3.</span> <span class="nav-text">使用.dockerignore进行排除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用多级构建"><span class="nav-number">5.4.</span> <span class="nav-text">使用多级构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解藕应用程序"><span class="nav-number">5.5.</span> <span class="nav-text">解藕应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小化层数"><span class="nav-number">5.6.</span> <span class="nav-text">最小化层数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多行参数排序"><span class="nav-number">5.7.</span> <span class="nav-text">多行参数排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用构建缓存"><span class="nav-number">5.8.</span> <span class="nav-text">利用构建缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">5.9.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FROM"><span class="nav-number">5.9.1.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LABEL"><span class="nav-number">5.9.2.</span> <span class="nav-text">LABEL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RUN"><span class="nav-number">5.9.3.</span> <span class="nav-text">RUN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#APT-GET"><span class="nav-number">5.9.3.1.</span> <span class="nav-text">APT-GET</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用管道"><span class="nav-number">5.9.3.2.</span> <span class="nav-text">使用管道</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">5.9.4.</span> <span class="nav-text">CMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPOSE"><span class="nav-number">5.9.5.</span> <span class="nav-text">EXPOSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENV"><span class="nav-number">5.9.6.</span> <span class="nav-text">ENV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADD-或-COPY"><span class="nav-number">5.9.7.</span> <span class="nav-text">ADD 或 COPY</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令-1"><span class="nav-number">6.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务"><span class="nav-number">7.</span> <span class="nav-text">服务</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Docker简介"><span class="nav-number">1.</span> <span class="nav-text">Docker简介</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念"><span class="nav-number">1.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我可以使用Docker来做什么？"><span class="nav-number">1.2.</span> <span class="nav-text">我可以使用Docker来做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#快速、一致地交付您的应用"><span class="nav-number">1.2.1.</span> <span class="nav-text">快速、一致地交付您的应用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#响应式部署和扩展"><span class="nav-number">1.2.2.</span> <span class="nav-text">响应式部署和扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在相同的硬件上运行更多的工作负载"><span class="nav-number">1.2.3.</span> <span class="nav-text">在相同的硬件上运行更多的工作负载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker架构"><span class="nav-number">1.3.</span> <span class="nav-text">Docker架构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#镜像-Image"><span class="nav-number">2.</span> <span class="nav-text">镜像(Image)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#容器-Container"><span class="nav-number">3.</span> <span class="nav-text">容器(Container)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-2"><span class="nav-number">3.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#仓库-Repository"><span class="nav-number">4.</span> <span class="nav-text">仓库(Repository)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-3"><span class="nav-number">4.1.</span> <span class="nav-text">基础概念</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DockerFile"><span class="nav-number">5.</span> <span class="nav-text">DockerFile</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础概念-4"><span class="nav-number">5.1.</span> <span class="nav-text">基础概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构建上下文"><span class="nav-number">5.2.</span> <span class="nav-text">构建上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概念"><span class="nav-number">5.2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Pipe-Dockerfile-through-stdin"><span class="nav-number">5.2.2.</span> <span class="nav-text">Pipe Dockerfile through stdin</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-dockerignore进行排除"><span class="nav-number">5.3.</span> <span class="nav-text">使用.dockerignore进行排除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用多级构建"><span class="nav-number">5.4.</span> <span class="nav-text">使用多级构建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解藕应用程序"><span class="nav-number">5.5.</span> <span class="nav-text">解藕应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小化层数"><span class="nav-number">5.6.</span> <span class="nav-text">最小化层数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多行参数排序"><span class="nav-number">5.7.</span> <span class="nav-text">多行参数排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用构建缓存"><span class="nav-number">5.8.</span> <span class="nav-text">利用构建缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令"><span class="nav-number">5.9.</span> <span class="nav-text">指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#FROM"><span class="nav-number">5.9.1.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LABEL"><span class="nav-number">5.9.2.</span> <span class="nav-text">LABEL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RUN"><span class="nav-number">5.9.3.</span> <span class="nav-text">RUN</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#APT-GET"><span class="nav-number">5.9.3.1.</span> <span class="nav-text">APT-GET</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用管道"><span class="nav-number">5.9.3.2.</span> <span class="nav-text">使用管道</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CMD"><span class="nav-number">5.9.4.</span> <span class="nav-text">CMD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#EXPOSE"><span class="nav-number">5.9.5.</span> <span class="nav-text">EXPOSE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENV"><span class="nav-number">5.9.6.</span> <span class="nav-text">ENV</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ADD-或-COPY"><span class="nav-number">5.9.7.</span> <span class="nav-text">ADD 或 COPY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ENTRYPOINT"><span class="nav-number">5.9.8.</span> <span class="nav-text">ENTRYPOINT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VOLUMN"><span class="nav-number">5.9.9.</span> <span class="nav-text">VOLUMN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#USER"><span class="nav-number">5.9.10.</span> <span class="nav-text">USER</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WORKDIR"><span class="nav-number">5.9.11.</span> <span class="nav-text">WORKDIR</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ONBUILD"><span class="nav-number">5.9.12.</span> <span class="nav-text">ONBUILD</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#指令-1"><span class="nav-number">6.</span> <span class="nav-text">指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务"><span class="nav-number">7.</span> <span class="nav-text">服务</span></a></li></ol></div>
             
 
           </div>
